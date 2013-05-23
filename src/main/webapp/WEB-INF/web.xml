@@ -1,0 +1,24 @@
+<web-app>
+    <display-name>Http Patch Check Application</display-name>
+
+    <servlet>
+        <servlet-name>Resteasy</servlet-name>
+        <servlet-class>
+            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+        </servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>thorben.http_patch_check.PatchCheckApplication</param-value>
+        </init-param>
+        <init-param>
+		      <param-name>resteasy.servlet.mapping.prefix</param-name>
+		      <param-value>/rest</param-value>
+		    </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Resteasy</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
